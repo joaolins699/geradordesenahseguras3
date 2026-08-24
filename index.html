@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas Pro</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>🔐 Gerador de Senhas</h1>
+            <p class="subtitle">Crie senhas fortes e seguras em segundos</p>
+        </header>
+
+        <!-- Exibição da senha -->
+        <div class="password-wrapper">
+            <div class="password-display" id="passwordOutput">
+                <span class="placeholder">Clique em "Gerar"</span>
+            </div>
+            <button class="btn-copy" id="copyBtn" title="Copiar senha">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Botão gerar -->
+        <button class="btn-generate" id="generateBtn">⚡ Gerar Senha</button>
+
+        <!-- Controles -->
+        <div class="controls">
+            <!-- Tamanho da senha -->
+            <div class="control-group">
+                <label for="lengthSlider">Comprimento: <span id="lengthDisplay">12</span></label>
+                <div class="length-control">
+                    <button class="btn-counter" id="decrementBtn">−</button>
+                    <input type="range" id="lengthSlider" min="4" max="32" value="12" />
+                    <button class="btn-counter" id="incrementBtn">+</button>
+                </div>
+            </div>
+
+            <!-- Opções de caracteres -->
+            <div class="control-group">
+                <label>Tipo de caracteres:</label>
+                <div class="toggle-grid">
+                    <button class="toggle-btn active" data-option="emoji">😊 Emojis</button>
+                    <button class="toggle-btn active" data-option="upper">🔠 Maiúsculas</button>
+                    <button class="toggle-btn active" data-option="lower">🔡 Minúsculas</button>
+                    <button class="toggle-btn active" data-option="number">🔢 Números</button>
+                    <button class="toggle-btn active" data-option="symbol">🔣 Símbolos</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador de força -->
+        <div class="strength-container">
+            <div class="strength-header">
+                <span class="strength-label">Força da senha</span>
+                <span class="strength-text" id="strengthText">—</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progressBar" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>💡 Dica: Quanto mais opções, mais forte a senha!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
